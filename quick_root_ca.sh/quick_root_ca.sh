@@ -84,7 +84,7 @@ EOF
 # generate a private key for the certificate-pair
 openssl genrsa -out ${STAMPPATH}/${1}.key ${SERVERKEY_LENGTH}
 # create a certificate request
-openssl req -new -sha256 -key ${STAMPPATH}/${1}.key -config ${STAMPPATH}/crt_cert.conf -subj "/C=${SC_C}/ST=${SC_ST}/O=${SC_O}//CN=${1}" -out ${STAMPPATH}/${1}.csr
+openssl req -new -sha256 -key ${STAMPPATH}/${1}.key -config ${STAMPPATH}/crt_cert.conf -subj "/C=${SC_C}/ST=${SC_ST}/O=${SC_O}/CN=${1}" -out ${STAMPPATH}/${1}.csr
 
 # (optional) - show the content of the certificate-request
 openssl req -in ${STAMPPATH}/${1}.csr -noout -text
